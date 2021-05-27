@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/Home/*" ["/components/home/index.js"],
+      "@/styles/*" : ["styles/*"],
+    }
+  }
+}
