@@ -2,8 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/Home/*" ["/components/home/index.js"],
-      "@/styles/*" : ["styles/*"],
+      "@/home/*" : ["components/home/index.js"],
+      "@/layout/*" : ["components/layout/index.js"],
+      "@/navagation/*" : ["components/navagation/index.js"],
+      "@/styles/*" : ["styles/*"]
     }
   }
 }
