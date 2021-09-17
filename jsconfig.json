@@ -1,11 +1,11 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/home/*" : ["components/home/index.js"],
-      "@/layout/*" : ["components/layout/index.js"],
-      "@/navagation/*" : ["components/navagation/index.js"],
-      "@/styles/*" : ["styles/*"]
-    }
-  }
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/home/*": ["components/home/index.js"],
+			"@/layout/*": ["components/layout/index.js"],
+			"@/navigation/*": ["components/navigation/index.js"],
+			"@/styles/*": ["styles/*"]
+		}
+	}
 }

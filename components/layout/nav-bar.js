@@ -1,11 +1,11 @@
-import { NavLink } from '@/navagation/*'
+import { NavLink } from '@/navigation/*';
 
 const NavBar = () => {
-  return (
-    <div>
-      <NavLink path="/home" name="home" />
-    </div>
-  )
-}
+	return (
+		<div>
+			<NavLink path="/home" name="home" />
+		</div>
+	);
+};
 
-export default NavBar
+export default NavBar;

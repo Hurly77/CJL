@@ -1,0 +1,7 @@
+{
+	"cSpell.words": ["tailwindcss"],
+	"css.lint.unknownAtRules": "ignore",
+	"css.validate": false, // Disable css built-in lint
+	"stylelint.enable": true, // Enable sytlelint
+	"scss.validate": false // Disable scss lint (optional if using scss)
+}
