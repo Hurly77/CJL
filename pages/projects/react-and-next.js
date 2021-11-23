@@ -2,8 +2,7 @@ import { NestedLayout } from '@/components/index';
 import Image from 'next/image';
 import { Layout } from '@/components/index';
 
-export default function ReactAndNext(props) {
-	console.log(props);
+export default function ReactAndNext() {
 	return (
 		<div>
 			React and NextJS
@@ -42,10 +41,7 @@ ReactAndNext.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps(context) {
-	const res = await fetch('http://localhost:3000/api/projects/vanilla');
-	const data = await res.json();
-	console.log(context);
 	return {
-		props: { ...data },
+		props: {},
 	};
 }
