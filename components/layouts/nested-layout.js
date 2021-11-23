@@ -76,6 +76,4 @@ const NestedLayout = ({ children }) => {
 		</div>
 	);
 };
-
-//adjusted tab width for github view
 export default NestedLayout;
