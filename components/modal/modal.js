@@ -22,7 +22,7 @@ const Modal = ({ children, selector, open, setOpen }) => {
 		setIsDoc(true);
 		setOpen(false);
 		return () => setOpen(true);
-	}, [selector]);
+	}, [selector, setOpen]);
 
 	if (isDoc && open) {
 		const portal = document.querySelector(selector);

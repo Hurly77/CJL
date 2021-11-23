@@ -24,7 +24,7 @@ export default function ReactAndNext() {
 							I need to write out a very long sentence with a giant word like
 							pneumonoultramicroscopicsilicovolcanoconiosisl that way I can test
 							the word wrap of my sentence and if it is to long I will need to
-							make sure that it truncates so it don't look crap
+							make sure that it truncates so it don&apos;t look crap
 						</p>
 						<div className='card-actions'>
 							<button className='btn btn-info'>Visit</button>
