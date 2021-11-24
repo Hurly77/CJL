@@ -1,47 +1,27 @@
-import { NestedLayout } from '@/components/index';
-import Image from 'next/image';
-import { Layout } from '@/components/index';
+import { NestedLayout } from '@/components/index'
+import {MapCards} from '@/components/*'
 
-export default function ReactAndNext() {
-	return (
-		<div>
-			React and NextJS
-			<div className='flex flex-wrap min-h-screen justify-evenly'>
-				<div className='box-content w-full px-10 py-10 m-3 border md:w-2/3 border-accent card lg:card-side'>
-					<figure className=''>
-						<Image
-							alt='view sunset'
-							height={300}
-							width={200}
-							src='/images/roboDog.png'
-							className='rounded-lg bg-base-300'
-							objectFit='contain'
-						/>
-					</figure>
-					<div className='w-full rounded-lg lg:w-1/3 card-body'>
-						<h1 className='card-title'>MVC OOP M.2 JavaScript</h1>
-						<p className='lg:line-clamp-3 line-clamp-4'>
-							I need to write out a very long sentence with a giant word like
-							pneumonoultramicroscopicsilicovolcanoconiosisl that way I can test
-							the word wrap of my sentence and if it is to long I will need to
-							make sure that it truncates so it don&apos;t look crap
-						</p>
-						<div className='card-actions'>
-							<button className='btn btn-info'>Visit</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+export default function ReactAndNext(props) {
+  return (
+    <div>
+      <MapCards projects={props.projects}/>
+    </div>
+  )
 }
 
 ReactAndNext.getLayout = function getLayout(page) {
-	return <NestedLayout>{page}</NestedLayout>;
-};
+  return <NestedLayout>{page}</NestedLayout>
+}
 
 export async function getStaticProps(context) {
-	return {
-		props: {},
-	};
+  return {
+    props: {
+      projects: [
+        {id: 1, title:"Next Connect", description: "Next Connect was the first full-stack application that I've ever made completely on my own using BareBones React and Ruby on Rails. I'm currently converting it over to NextJS.", img: "/images/projects/react/next-connect.png", demo:"https://nextconnect.surge.sh/"},
+        {id: 2, title: "Blog It", description: "A Simple blog website using react-markdown and MongoDB, with Postcss", img: "/images/projects/react/blog.png", demo:"https://blog.enzwel.com", code:"https://github.com/Hurly77/BlogIt"},
+        {id: 3, title: "The Eatery", description:"Simple website one might have for a small business.", img:"/images/projects/react/eat.png", demo:"eat.enzwel.com", code:"https://github.com/Hurly77/The-Eatery"},
+        {id: 4, title: "Genesis Iron Works", description: "Genesis Iron Works, I built this company a website using JavaScript, Next.js and tailwindcss", img:'/images/projects/react/geniron.png', demo: 'https://genironworks.com/', code: null}
+      ]
+    },
+  }
 }

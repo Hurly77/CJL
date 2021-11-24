@@ -3,5 +3,15 @@
 	"css.lint.unknownAtRules": "ignore",
 	"css.validate": false, // Disable css built-in lint
 	"stylelint.enable": true, // Enable sytlelint
-	"scss.validate": false // Disable scss lint (optional if using scss)
+	"scss.validate": false,
+	"editor.formatOnSave": true,
+	"editor.hover.delay": 2000,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.jsxBracketSameLine": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.proseWrap": "always",
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"prettier.endOfLine": "auto",
+	"editor.minimap.enabled": false // Disable scss lint (optional if using scss)
 }
