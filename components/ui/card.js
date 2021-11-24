@@ -19,11 +19,11 @@ const Card = ({ title, description, code, demo, img}) => {
           <h1 className="card-title">{title}</h1>
           <p className="lg:line-clamp-3 line-clamp-4">{description}</p>
           <div className="card-actions">
-            {demo ? <a target="_blank" href={demo} className="btn btn-info">
+            {demo ? <a target="_blank" rel="noreferrer" href={demo} className="btn btn-info">
               Preview
             </a> : null}
             
-             {code ? <a target="_blank" href={code} className="btn btn-info">
+             {code ? <a target="_blank" rel="noreferrer" href={code} className="btn btn-info">
               Git Repo
             </a> : null}
             {console.log(code)}
