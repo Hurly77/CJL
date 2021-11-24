@@ -76,5 +76,4 @@ const NestedLayout = ({ children }) => {
 		</div>
 	);
 };
-
 export default NestedLayout;
