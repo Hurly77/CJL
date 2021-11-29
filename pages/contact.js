@@ -1,23 +1,41 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 
 const Contact = (props) => {
+	const [state, setState] = useState({
+		name: '',
+		email: '',
+		message: '',
+	});
+
 	const form = useRef();
-	console.log(props.id, props.template, form.current, props.user)
+
+	const handleChange = (e) => {
+		e.preventDefault();
+
+		setState({
+			...state,
+			[e.target.name]: e.target.value,
+		});
+	};
+	
 	const sendEmail = async (e) => {
 		e.preventDefault();
-		emailjs
-			.sendForm(props.id, props.template, form.current, props.user)
-			.then(
-				(result) => {
-					console.log(result.text);
-					console.log('from sever');
-				},
-				(error) => {
-					console.log('from sever');
-					console.log(error.text);
-				},
-			);
+		emailjs.sendForm(props.id, props.template, form.current, props.user).then(
+			(result) => {
+				console.log(result.text);
+				console.log('from sever');
+			},
+			(error) => {
+				console.log('from sever');
+				console.log(error.text);
+			},
+		);
+		setState({
+			name: '',
+			email: '',
+			message: '',
+		});
 	};
 
 	return (
@@ -31,7 +49,9 @@ const Contact = (props) => {
 						</label>
 						<input
 							type='text'
+							onChange={handleChange}
 							name='name'
+							value={state.name}
 							placeholder='Json Borne'
 							className='input input-bordered'
 							required
@@ -42,7 +62,9 @@ const Contact = (props) => {
 							<span className='label-text'>email</span>
 						</label>
 						<input
+							onChange={handleChange}
 							name='email'
+							value={state.email}
 							type='email'
 							placeholder='json_borne@email.com'
 							className='input input-bordered'
@@ -54,7 +76,9 @@ const Contact = (props) => {
 							<span className='label-text'>Lets Talk</span>
 						</label>
 						<textarea
+							onChange={handleChange}
 							name='message'
+							value={state.message}
 							className='h-24 textarea textarea-bordered textarea-success'
 							placeholder='Hi I would like to talk about ....'></textarea>
 					</div>
