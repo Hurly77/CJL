@@ -26,7 +26,6 @@ const Card = ({ title, description, code, demo, img}) => {
              {code ? <a target="_blank" rel="noreferrer" href={code} className="btn btn-info">
               Git Repo
             </a> : null}
-            {console.log(code)}
           </div>
         </div>
       </div>
