@@ -5,7 +5,7 @@ export default function Resume() {
         <div className="flex justify-center w-full max-w-4xl pb-5 md:justify-start">
           <a
             className="capitalize rounded btn btn-primary btn-sm text-primary-content font-semi my"
-            href="https://mgqajzspdkingrdcdwwl.supabase.co/storage/v1/object/public/pub-files/blk-crow-ai.pdf"
+            href="https://mgqajzspdkingrdcdwwl.supabase.co/storage/v1/object/public/pub-files/08-10-22.pdf"
             download="Cameron-Leverett-Resume.pdf"
             target="_blank"
             rel="noreferrer"
