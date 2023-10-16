@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const links = [
-  { path: "/projects/vanilla", name: "Projects" },
+  { path: "/projects/react-and-next", name: "Projects" },
   { path: "/resume", name: "Resume" },
   { path: "/about", name: "About" },
   { path: "/contact", name: "Contact" },
@@ -31,7 +31,7 @@ const Navbar = ({ children }) => {
               </Link>
             ))}
           </SliderOver>
-          <div className="flex flex-none hidden px-2 mx-2 -translate-x-4 text-base-content sm:navbar-start lg:flex">
+          <div className="flex flex-none px-2 mx-2 -translate-x-4 text-base-content sm:navbar-start lg:flex">
             {links.map((link, id) => (
               <Link key={id} href={link.path} passHref>
                 <a className="m-1 btn btn-sm btn-ghost">{link.name}</a>

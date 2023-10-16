@@ -28,11 +28,11 @@ export default function ProjectsLayout({ children }) {
   }, [router, isAnimating, setIsAnimating]);
 
   const tabs = [
-    { id: 0, title: "Vanilla", href: "/projects/vanilla" },
-    { id: 1, title: "React", href: "/projects/react-and-next" },
+    { id: 0, title: "React", href: "/projects/react-and-next" },
+    { id: 1, title: "APIs", href: "/projects/node-and-apis" },
     { id: 2, title: "Python", href: "/projects/python" },
-    { id: 3, title: "C", href: "/projects/c-programming" },
-    { id: 4, title: "APIs", href: "/projects/node-and-apis" },
+    { id: 3, title: "Vanilla", href: "/projects/vanilla" },
+    { id: 4, title: "C", href: "/projects/c-programming" },
   ];
 
   return (

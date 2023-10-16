@@ -5,7 +5,7 @@ export default function Resume() {
         <div className="flex justify-center w-full max-w-4xl pb-5 md:justify-start">
           <a
             className="capitalize rounded btn btn-primary btn-sm text-primary-content font-semi my"
-            href="https://mgqajzspdkingrdcdwwl.supabase.co/storage/v1/object/public/pub-files/08-10-22.pdf"
+            href="https://mgqajzspdkingrdcdwwl.supabase.co/storage/v1/object/public/pub-files/cameron-leverett-10-12-2023.pdf"
             download="Cameron-Leverett-Resume.pdf"
             target="_blank"
             rel="noreferrer"
@@ -16,7 +16,7 @@ export default function Resume() {
         <embed
           className="w-full h-screen max-h-screen overflow-hidden border rounded bg-primary"
           type="application/pdf"
-          src="https://mgqajzspdkingrdcdwwl.supabase.co/storage/v1/object/public/pub-files/blk-crow-ai.pdf"
+          src="https://mgqajzspdkingrdcdwwl.supabase.co/storage/v1/object/public/pub-files/cameron-leverett-10-12-2023.pdf"
         />
       </div>
     </>

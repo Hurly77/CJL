@@ -11,7 +11,7 @@ export default async function getProjects(...props: string[]) {
     .select(columns)
     .eq("category", category)
     .limit(20)
-    .order("id", { ascending: true });
+    .order("id", { ascending: false });
   if (error) {
     throw error;
   }
