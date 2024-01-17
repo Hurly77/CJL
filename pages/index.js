@@ -25,7 +25,7 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="hero-content">
-                  <Link href="/projects/vanilla" passHref>
+                  <Link href="/projects/react" passHref>
                     <a className="btn btn-primary text-primary-content">Projects</a>
                   </Link>
                   <Link href="/resume" passHref>
