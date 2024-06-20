@@ -1,7 +1,9 @@
 import Image from "next/image";
-import supabase from "sdk/utility/supabase";
 
-export default function About(props) {
+import supabase from "@/sdk/utility/supabase";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function About(props: any) {
   const { name, avatar, bodyTitle, figureOne } = props;
   return (
     <div className="relative z-10 min-h-screen p-2 my-6 lg:p-0">

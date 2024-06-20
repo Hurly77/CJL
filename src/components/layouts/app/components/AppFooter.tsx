@@ -1,26 +1,36 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useState } from "react";
-const NestedNavHead = ({ tabs, children }) => {
-  const router = useRouter();
-  const [activeTab, setActiveTab] = useState(tabs.find((tab) => tab.href === router.pathname));
+import React from "react";
 
+export function AppFooter() {
   return (
-    <div className="w-full max-w-5xl px-2 lg:px-6">
-      <h1 className="my-6 text-base-content">Check out my Projects</h1>
-      <div className="justify-between my-4">
-        <div className="grid grid-cols-3 w-52">
+    <footer className="w-full bg-background">
+      <div className="flex gap-4 text-foreground-500">
+        <Link href="/projects/vanilla" className="link link-hover">
+          Projects
+        </Link>
+        <Link href="/about" className="link link-hover">
+          About
+        </Link>
+        <Link href="/resume" className="link link-hover">
+          Resume
+        </Link>
+        <Link href="/contact" className="link link-hover">
+          Contact
+        </Link>
+      </div>
+      <div className="flex">
+        <div className="grid grid-flow-col gap-10">
           <a
             className="cursor-pointer"
-            href="https://github.com/Hurly77"
             rel="noreferrer"
             target="_blank"
+            href="https://github.com/Hurly77"
           >
             <svg
               role="img"
               viewBox="0 0 24 24"
               width="25"
-              className="w-10 fill-current lg:w-12 text-base-content"
+              className="w-8 fill-current text-base-content"
               xmlns="http://www.w3.org/2000/svg"
             >
               <title>GitHub</title>
@@ -29,15 +39,15 @@ const NestedNavHead = ({ tabs, children }) => {
           </a>
           <a
             className="cursor-pointer"
-            href="https://linkedin.com/in/cameron-leverett"
             rel="noreferrer"
             target="_blank"
+            href="https://linkedin.com/in/cameron-leverett"
           >
             <svg
               role="img"
               viewBox="0 0 24 24"
               width="50"
-              className="w-10 fill-current lg:w-12 text-base-content"
+              className="w-8 fill-current text-base-content"
               xmlns="http://www.w3.org/2000/svg"
             >
               <title>LinkedIn</title>
@@ -46,15 +56,15 @@ const NestedNavHead = ({ tabs, children }) => {
           </a>
           <a
             className="cursor-pointer"
-            href="https://camrbo.medium.com"
             rel="noreferrer"
             target="_blank"
+            href="https://camrbo.medium.com"
           >
             <svg
               role="img"
               viewBox="0 0 24 24"
               width="50"
-              className="w-10 fill-current lg:w-12 text-base-content"
+              className="w-8 fill-current text-base-content"
               xmlns="http://www.w3.org/2000/svg"
             >
               <title>Medium</title>
@@ -63,35 +73,11 @@ const NestedNavHead = ({ tabs, children }) => {
           </a>
         </div>
       </div>
-      <div className="my-6 rounded-t-lg rounded-b lg:overflow-hidden lg:border lg:border-base-200">
-        <div className="flex w-full">
-          <div className="relative flex w-full rounded lg:rounded-b-none lg:p-0 tabs lg:tabs-boxed">
-            <div
-              className="absolute z-10 hidden w-1/5 h-full font-normal duration-700 rounded-b-none lg:flex lg:text-lg transition-position btn-sm lg:btn-md btn btn-primary"
-              style={{ left: activeTab.id * 20 + "%" }}
-            >
-              {activeTab.title}
-            </div>
-            {tabs.map((tab, id) => (
-              <Link key={id} href={tab.href} passHref>
-                <a
-                  className={
-                    tab.href === router.pathname
-                      ? "z-0 w-1/5 px-3 tab tab-lg lg:text-base-neutral text-base-content"
-                      : "z-0 w-1/5 px-3 tab tab-lg"
-                  }
-                  onClick={() => setActiveTab(tab)}
-                >
-                  {tab.title}
-                </a>
-              </Link>
-            ))}
-          </div>
-        </div>
-        {children}
+      <div>
+        <p>Copyright © 2021 - All right reserved by Cameron J. Leverett</p>
       </div>
-    </div>
+    </footer>
   );
-};
+}
 
-export default NestedNavHead;
+export default AppFooter;

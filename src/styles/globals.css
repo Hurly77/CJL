@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Teko";
+    font-weight: 400;
+    src: url("../../public/fonts/Teko-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Teko";
+    font-weight: 500;
+    src: url("../../public/fonts/Teko-Regular.ttf");
+  }
+}
+
+@layer utilities {
+}
+
+@layer components {
+  .app {
+    @apply flex w-screen h-screen;
+  }
+  .layout {
+    @apply relative flex max-w-full max-h-full overflow-x-hidden border-4 border-red-500 grow;
+  }
+  .page {
+    @apply flex max-w-full p-4 overflow-y-auto border-4 border-blue-500 grow bg-background;
+  }
+
+  .gradd {
+    background: linear-gradient(-45deg, #4e46e5e5 40%, #4e46e50e 99%);
+  }
+}
