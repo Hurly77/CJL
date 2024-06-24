@@ -1,6 +1,3 @@
-// Created this because, in order to access the useThemeHook,
-// The component has to be in Wrapped & Called with in the Provider.
-
 import { useTheme } from "next-themes";
 import React from "react";
 
@@ -19,7 +16,7 @@ export function ThemeWrapper({ children }: { children: React.ReactNode }) {
   return (
     <div
       id="APP_THEME_WRAPPER"
-      className={cls("flex flex-col h-full", theme ?? "", font?.font.className)}
+      className={cls("flex flex-col h-full", theme ?? "dark", font?.font.className)}
     >
       {children}
     </div>

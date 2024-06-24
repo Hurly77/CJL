@@ -22,14 +22,51 @@
   .app {
     @apply flex w-screen h-screen;
   }
-  .layout {
-    @apply relative flex max-w-full max-h-full overflow-x-hidden border-4 border-red-500 grow;
+  .app-overflow {
+    @apply flex flex-col w-full max-h-full overflow-y-auto grow custom-scrollbar;
   }
-  .page {
-    @apply flex max-w-full p-4 overflow-y-auto border-4 border-blue-500 grow bg-background;
+  .app-content {
+    @apply flex flex-col justify-center items-center w-full;
+  }
+  .app-page {
+    @apply min-h-[calc(100vh-4rem)] flex w-full p-4;
+  }
+  .app-page2xl {
+    @apply min-h-[calc(100vh-4rem)] max-w-screen-2xl flex w-full p-4;
   }
 
-  .gradd {
-    background: linear-gradient(-45deg, #4e46e5e5 40%, #4e46e50e 99%);
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-[5px] h-[5px] bg-default rounded-[4px];
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary h-[5px] rounded-[4px];
+  }
+
+  .project-section {
+    @apply w-full max-w-screen-md p-4 sm:px-4 px-0 relative my-4 min-h-[calc(100vh-65px)] snap-end flex flex-col justify-center;
+  }
+
+  .tb1 {
+    @apply border-4 border-primary;
+  }
+  .tb2 {
+    @apply border-4 border-secondary;
+  }
+  .tb3 {
+    @apply border-4 border-success;
+  }
+  .tb4 {
+    @apply border-4 border-danger;
+  }
+
+  .bg-image-home {
+    background-image: url("/images/wave.png");
+    object-fit: contain;
+    background-attachment: scroll;
+  }
+
+  .all-border * {
+    @apply border border-divider;
   }
 }

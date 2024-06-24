@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@nextui-org/react";
 
 import supabase from "@/sdk/utility/supabase";
 
@@ -6,7 +6,7 @@ import supabase from "@/sdk/utility/supabase";
 export default function About(props: any) {
   const { name, avatar, bodyTitle, figureOne } = props;
   return (
-    <div className="relative z-10 min-h-screen p-2 my-6 lg:p-0">
+    <div className="relative z-10 min-h-screen p-2 my-6 lg:p-0 snap-end">
       <section className="overflow-hidden rounded-lg">
         <article className="relative flex flex-wrap-reverse lg:justify-between even:flex-row-reverse">
           <div className="flex items-center w-full py-12 lg:w-1/2 sm:py-24 lg:py-48 lg:items-center">
@@ -33,8 +33,6 @@ export default function About(props: any) {
               src={avatar}
               className="bg-neutral mask mask-circle"
               alt="Illustration of Cameron J. Leverett"
-              layout="fill"
-              objectFit="contain"
             />
           </div>
         </article>
@@ -51,8 +49,6 @@ export default function About(props: any) {
               src={figureOne}
               alt="Computer programming and robotics"
               className="absolute inset-0 object-cover w-full h-full"
-              layout="fill"
-              objectFit="contain"
             />
           </div>
         </article>

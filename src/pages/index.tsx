@@ -1,18 +1,23 @@
-import Head from "next/head";
-import Link from "next/link";
+import React from "react";
 
-export default function Home() {
+import LandingHeroImage from "@/app/components/Landing/LandingHeroImage";
+import LandingHeroTitle from "@/app/components/Landing/LandingHeroTitle";
+
+import { NextPageWithLayout } from "./_app";
+
+export const Home: NextPageWithLayout = () => {
   return (
-    <>
-      <Head>
-        <title> I&apos;m Cameron</title>
-        <meta
-          name="description"
-          content="Cameron John Leverett, Software engineer, web Developer full-stack"
-        />
-        <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-      </Head>
-      <div className="w-full h-screen text-white bg-indigo-800 border border-white bg-circuit"></div>
-    </>
+    <div className="app-page relative bg-image-home snap-end">
+      <div className="flex sm:items-center w-full gap-4">
+        <div className="flex sm:justify-center gap-4 w-full flex-col sm:flex-row">
+          <LandingHeroTitle />
+          <LandingHeroImage />
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+Home.title = "Cameron Leverett";
+Home.description = "Cameron John Leverett, Software engineer, web Developer full-stack";
+export default Home;

@@ -3,8 +3,11 @@ import { useRouter } from "next/router";
 import { ThemeProvider } from "next-themes";
 import React from "react";
 
-import { useFont } from "@/components/drop-down/FontDropDown";
+import { useFont } from "@/components/Dropdowns/FontDropDown";
 
+import NavigationBar from "../components/Navigation/NavigationBar";
+import NavigationFooter from "../components/Navigation/NavigationFooter";
+import { ThemeWrapper } from "../components/ThemeWrapper";
 import { cls } from "../helpers/twind-helpers";
 
 interface AppContextProps {
@@ -21,10 +24,37 @@ export function AppContextProvider({ children }: { children: React.ReactNode }) 
 
   return (
     <AppContext.Provider value={value}>
-      <NextUIProvider navigate={router.push}>
+      <NextUIProvider
+        navigate={(path) => {
+          console.log("navigate", path);
+          router.push(path, path, {
+            scroll: false,
+          });
+        }}
+      >
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <div id="APP" className={cls("flex flex-col h-screen", font.font?.className)}>
-            {children}
+          <div
+            id="APP"
+            className={cls(
+              "flex flex-col h-screen  from-background bg-gradient-to-tl from-50% via-content2 to-content2",
+              font.font?.className,
+            )}
+          >
+            <ThemeWrapper>
+              <div
+                id="APP_OVERFLOW"
+                className={cls(
+                  "app-overflow overflow-x-hidden scroll-smooth",
+                  ["/projects", "/"].includes(router.pathname) ? "snap-mandatory snap-y" : "",
+                )}
+              >
+                <NavigationBar />
+                <div id="APP_CONTENT" className="app-content">
+                  {children}
+                </div>
+                <NavigationFooter />
+              </div>
+            </ThemeWrapper>
           </div>
         </ThemeProvider>
       </NextUIProvider>
