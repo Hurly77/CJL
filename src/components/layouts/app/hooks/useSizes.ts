@@ -21,5 +21,7 @@ export default function useSizes() {
     }
   }, []);
 
-  return sizes;
+  const isSmall = sizes.width <= 640 && sizes.width !== 0;
+
+  return { ...sizes, isSmall };
 }

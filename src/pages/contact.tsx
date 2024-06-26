@@ -1,84 +1,33 @@
-import emailjs from "emailjs-com";
-import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import React from "react";
+
+import ContactForm from "@/app/components/Contact/ContactForm";
+import SocialsAnimatedList from "@/app/components/Socials/SocialsAnimateList";
 
 export default function Contact() {
-  const id = process.env.NEXT_PUBLIC_YOUR_SERVICE_ID;
-  const template = process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID;
-  const user = process.env.NEXT_PUBLIC_YOUR_USER_ID;
-  const [state, setState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const form = useRef();
-
-  const handleChange = (e) => {
-    e.preventDefault();
-
-    setState({
-      ...state,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const sendEmail = async (e) => {
-    e.preventDefault();
-    emailjs.sendForm(id, template, form.current, user);
-    setState({
-      name: "",
-      email: "",
-      message: "",
-    });
-  };
-
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="w-full p-5 my-4 rounded h-fit lg:p-10 shadow-base-300 lg:shadow-lg xl:w-1/2 lg:w-4-5 md:w-5/6 card bg-base-100">
-        <h1 className="card-title text-base-content">Lets Talk</h1>
-        <form ref={form} onSubmit={sendEmail} className="card-content">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">name</span>
-            </label>
-            <input
-              type="text"
-              onChange={handleChange}
-              name="name"
-              value={state.name}
-              placeholder="Json Borne"
-              className="input input-bordered"
-              required
-            />
+    <div className="flex-col items-center justify-center pb-24 app-page">
+      <div className="flex flex-col items-center justify-center w-full h-full max-w-screen-lg px-2 py-4">
+        <motion.h1
+          className="w-full py-4 text-3xl font-bold sm:text-6xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          Reach out or contact me directly.
+        </motion.h1>
+        <div className="flex flex-col justify-between w-full sm:flex-row">
+          <div className="py-6 space-y-4">
+            <h2 className="w-full text-2xl font-semibold sm:text-4xl">Get in Touch with me.</h2>
+            <p className="max-w-md">
+              I&apos;m always open to new opportunities and collaborations.
+            </p>
+            <div className="flex gap-4">
+              <SocialsAnimatedList size="md" />
+            </div>
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">email</span>
-            </label>
-            <input
-              onChange={handleChange}
-              name="email"
-              value={state.email}
-              type="email"
-              placeholder="json_borne@email.com"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Lets Talk</span>
-            </label>
-            <textarea
-              onChange={handleChange}
-              name="message"
-              value={state.message}
-              className="h-24 textarea textarea-bordered textarea-success"
-              placeholder="Hi I would like to talk about ...."
-            ></textarea>
-          </div>
-          <input type="submit" value="Send" className="w-full my-3 btn btn-success" />
-        </form>
+          <ContactForm />
+        </div>
       </div>
     </div>
   );

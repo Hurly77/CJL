@@ -33,7 +33,7 @@ function ProjectVideoWrapper({ children }: { children: React.ReactNode }) {
           scale: [0, 1.1, isSmall ? 0.95 : 1],
           opacity: 1,
         }}
-        className="aspect-video h-full z-10 w-full border-2 border-secondary rounded relative"
+        className="relative z-10 w-full h-full border-2 rounded bg-opacity-5 shadow-small aspect-video bg-secondary border-secondary"
       >
         <DotsSvg isSmall={isSmall} />
         <motion.div
@@ -55,7 +55,7 @@ function ProjectVideoWrapper({ children }: { children: React.ReactNode }) {
           }}
           exit={{ x: 0, opacity: 0, scale: 0.1 }}
         >
-          <Card className="aspect-video rounded">{children}</Card>
+          <Card className="rounded aspect-video">{children}</Card>
         </motion.div>
       </motion.div>
     </MotionConfig>
@@ -77,12 +77,12 @@ export default function ProjectVideo(props: { url: string; thumbnail: string }) 
           }}
           src={thumbnail}
           alt={"project image"}
-          className="rounded object-contain"
+          className="object-contain rounded"
         />
       }
       wrapper={ProjectVideoWrapper}
       playIcon={
-        <PlayIcon className="w-12 h-12 absolute fill-primary z-10 bg-black rounded-full bg-opacity-20" />
+        <PlayIcon className="absolute z-10 w-12 h-12 bg-black rounded-full fill-primary bg-opacity-20" />
       }
     />
   );

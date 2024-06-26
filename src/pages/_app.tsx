@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={Component.description} />
-        <title>{Component.title ?? "Whatever"}</title>
+        <title>{Component.title ?? "Cameron J. Leverett"}</title>
       </Head>
 
       <AppLayout>{getLayout(<Component {...pageProps} />)}</AppLayout>

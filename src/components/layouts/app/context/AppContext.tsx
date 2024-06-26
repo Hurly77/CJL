@@ -25,27 +25,20 @@ export function AppContextProvider({ children }: { children: React.ReactNode }) 
   return (
     <AppContext.Provider value={value}>
       <NextUIProvider
-        navigate={(path) => {
-          console.log("navigate", path);
-          router.push(path, path, {
-            scroll: false,
-          });
+        navigate={async (path) => {
+          await router.push(path, path, { scroll: true });
+          const overflowElm = document.getElementById("APP_OVERFLOW");
+          if (overflowElm) overflowElm.scrollTop = 0;
         }}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <div
-            id="APP"
-            className={cls(
-              "flex flex-col h-screen  from-background bg-gradient-to-tl from-50% via-content2 to-content2",
-              font.font?.className,
-            )}
-          >
+          <div id="APP" className={cls("app", font.font?.className)}>
             <ThemeWrapper>
               <div
                 id="APP_OVERFLOW"
                 className={cls(
-                  "app-overflow overflow-x-hidden scroll-smooth",
-                  ["/projects", "/"].includes(router.pathname) ? "snap-mandatory snap-y" : "",
+                  "app-overflow",
+                  ["/projects"].includes(router.pathname) ? "snap-mandatory snap-y" : "",
                 )}
               >
                 <NavigationBar />

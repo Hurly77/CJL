@@ -3,7 +3,7 @@ import { cls } from "../../helpers/twind-helpers";
 type SkillIconProps = {
   className?: string;
   wrapperClassName?: string;
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
 };
 
 export function ReactIcon(props: SkillIconProps) {

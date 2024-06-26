@@ -20,16 +20,16 @@
 
 @layer components {
   .app {
-    @apply flex w-screen h-screen;
+    @apply flex flex-col h-screen  from-background bg-gradient-to-tl from-50% via-content2 to-content2;
   }
   .app-overflow {
-    @apply flex flex-col w-full max-h-full overflow-y-auto grow custom-scrollbar;
+    @apply flex flex-col w-full max-h-full overflow-x-hidden overflow-y-auto grow custom-scrollbar;
   }
   .app-content {
-    @apply flex flex-col justify-center items-center w-full;
+    @apply flex flex-col items-center justify-center w-full;
   }
   .app-page {
-    @apply min-h-[calc(100vh-4rem)] flex w-full p-4;
+    @apply min-h-[calc(100vh-4rem)] flex w-full;
   }
   .app-page2xl {
     @apply min-h-[calc(100vh-4rem)] max-w-screen-2xl flex w-full p-4;
@@ -47,6 +47,14 @@
     @apply w-full max-w-screen-md p-4 sm:px-4 px-0 relative my-4 min-h-[calc(100vh-65px)] snap-end flex flex-col justify-center;
   }
 
+  .tools-skills-wrapper {
+    @apply flex w-full gap-4 py-4 overflow-x-auto flex-nowrap sm:grid sm:grid-cols-5 sm:justify-items-center sm:justify-evenly sm:flex-wrap h-96 sm:h-auto sm:overflow-visible snap-x snap-mandatory;
+  }
+
+  .tool-skill-card {
+    @apply w-[calc(100vw-3rem)] sm:w-full border border-divider grow hover:z-10 sm:hover:scale-125 snap-center hover:transition-transform;
+  }
+
   .tb1 {
     @apply border-4 border-primary;
   }
@@ -62,8 +70,10 @@
 
   .bg-image-home {
     background-image: url("/images/wave.png");
-    object-fit: contain;
-    background-attachment: scroll;
+    object-fit: cover;
+    /* background-attachment: scroll; */
+    background-attachment: fixed;
+    /* background-repeat: no-repeat; */
   }
 
   .all-border * {
