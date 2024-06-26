@@ -35,8 +35,6 @@ export const Projects: NextPageWithLayout = () => {
     }
   }, []);
 
-  console.log(scrollHeight, projectItem);
-
   const defaults: ProjectCardProps = {
     title: "React Project UI",
     skills: ["NextJS", "React", "TypeScript", "TailwindCSS", "Docker", "AWS"],
