@@ -43,7 +43,7 @@ export default function LandingHeroImage() {
         >
           <Card>
             <Image
-              src="/images/Head-Shot.png"
+              src="/images/me/Head-Shot.png"
               height={500}
               width={500}
               className="bg-content1 -scale-x-100"

@@ -12,7 +12,7 @@ export default function AboutHeroImage() {
       <div className="overflow-hidden rounded-full w-fit h-fit">
         <Image
           className="object-contain translate-y-10 sm:translate-y-4 translate-x-7 sm:translate-x-10 aspect-square"
-          src="/images/me.png"
+          src="/images/me/transparent-head-shot.png"
           alt="hero"
           width={500}
           height={500}

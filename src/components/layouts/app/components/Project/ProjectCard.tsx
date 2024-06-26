@@ -7,7 +7,7 @@ import ProjectDescription from "./ProjectDescription";
 import ProjectVideo from "./ProjectVideo";
 
 export interface ProjectCardProps {
-  index: number;
+  index?: number;
   title: string;
   description: string;
   skills: string[];
@@ -17,20 +17,8 @@ export interface ProjectCardProps {
   thumbnail: string;
 }
 
-const defaults: ProjectCardProps = {
-  title: "React Project UI",
-  skills: ["NextJS", "React", "TypeScript", "TailwindCSS", "Docker", "AWS"],
-  description:
-    " A simple web app built to quickly find jobs in Ireland. Users enter the search term and desired county, and are offered job listings from 3 of the most popular job sites in Ireland",
-  demo: "",
-  github: "",
-  video: "https://youtu.be/i6NXZF1CE5Y?si=ok1EugSL9gEmBVZu",
-  thumbnail: "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg",
-  index: 0,
-};
-
-export default function ProjectCard(props?: ProjectCardProps) {
-  const { title, skills, thumbnail, video } = { ...defaults, ...props };
+export default function ProjectCard(props: ProjectCardProps) {
+  const { title, skills, thumbnail, description, video, demo, github } = props;
   const [didMount, setDidMount] = React.useState(false);
 
   React.useEffect(() => {
@@ -59,13 +47,9 @@ export default function ProjectCard(props?: ProjectCardProps) {
         }}
       >
         <div className="flex flex-col gap-6 justify-between p-2">
-          <ProjectButtons demo={defaults.demo} github={defaults.github} />
+          <ProjectButtons demo={demo} github={github} />
 
-          <ProjectDescription
-            text=" A simple web app built to quickly find jobs in Ireland. Users enter the search term and
-          desired county, and are offered job listings from 3 of the most popular job sites in
-          Ireland"
-          />
+          <ProjectDescription text={description} />
         </div>
       </MotionConfig>
       <div className="flex flex-wrap justify-start gap-4 w-full p-2">

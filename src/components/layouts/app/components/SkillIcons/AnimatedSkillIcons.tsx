@@ -27,6 +27,16 @@ const getSkillIcon = (skill = "React") => {
       return SkillIcons.NodeJSIcon;
     case "aws":
       return SkillIcons.AWSIcon;
+    case "postgresql":
+      return SkillIcons.PostgreSQLIcon;
+    case "mysql":
+      return SkillIcons.MySQLIcon;
+    case "supabase":
+      return SkillIcons.SupabaseIcon;
+    case "stripe":
+      return SkillIcons.StripeIcon;
+    case "nestjs":
+      return SkillIcons.NestJSIcon;
     default:
       return SkillIcons.ReactIcon;
   }

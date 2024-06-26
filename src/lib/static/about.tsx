@@ -10,7 +10,7 @@ export const AboutHeroSection = {
 export const AboutMyStorySection = {
   myStart: {
     title: "How I got started in Software Development",
-    image: "/images/story-img-1.jpg",
+    image: "/images/about/story-img-1.jpg",
     description: `
     My fascination with technology began in childhood, captivated by computers and further fueled when I built my first gaming PC.
     Before officially launching my software development career in 2019, I explored JavaScript and C++.
@@ -21,7 +21,7 @@ export const AboutMyStorySection = {
   },
   myFirstProject: {
     title: "My First Software Projects",
-    image: "/images/story-img-2.jpg",
+    image: "/images/about/story-img-2.jpg",
     description: `
     While studying at Flatiron School, I was assigned several projects including a Rick & Morty CLI application built with Ruby,
     a trivia server-side application using Ruby on Rails, and

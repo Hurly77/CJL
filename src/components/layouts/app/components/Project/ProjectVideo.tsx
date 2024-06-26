@@ -72,7 +72,7 @@ export default function ProjectVideo(props: { url: string; thumbnail: string }) 
       light={
         <Image
           classNames={{
-            img: "rounded object-cover h-full w-full sm:aspect-video aspect-square",
+            img: "rounded object-contain h-full w-full sm:aspect-video aspect-square",
             wrapper: " w-full",
           }}
           src={thumbnail}

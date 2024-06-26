@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 import ProjectCard, { ProjectCardProps } from "@/app/components/Project/ProjectCard";
+import { projects } from "@/lib/static/projects";
 
 import { NextPageWithLayout } from "./_app";
 
@@ -35,17 +36,6 @@ export const Projects: NextPageWithLayout = () => {
     }
   }, []);
 
-  const defaults: ProjectCardProps = {
-    title: "React Project UI",
-    skills: ["NextJS", "React", "TypeScript", "TailwindCSS", "Docker", "AWS"],
-    description: "",
-    demo: "",
-    github: "",
-    video: "https://youtu.be/i6NXZF1CE5Y?si=ok1EugSL9gEmBVZu",
-    thumbnail: "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg",
-    index: 0,
-  };
-
   function onClickMoveDown(direction: number) {
     const isUp = direction === 1;
 
@@ -62,8 +52,8 @@ export const Projects: NextPageWithLayout = () => {
 
   return (
     <div>
-      {Array.from({ length: 10 }).map((_, i) => (
-        <ProjectCard {...defaults} key={i} index={i} />
+      {projects.map((project, i) => (
+        <ProjectCard {...project} key={i} index={i} />
       ))}
       <div className="absolute bottom-4 right-4 sm:right-1/4 flex flex-col gap-2">
         {projectItem !== 0 && (
