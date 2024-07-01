@@ -11,6 +11,6 @@
       "database": "postgres"
     }
   ],
-  "cSpell.words": ["Cetagory", "multiselect"],
+  "cSpell.words": ["Cetagory", "multiselect", "nextui", "Pressable"],
   "svg.preview.background": "dark-transparent"
 }
