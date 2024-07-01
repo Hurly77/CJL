@@ -32,7 +32,7 @@ const DotsSvg = ({ isSmall }: { isSmall: boolean }) => (
 function ProjectVideoWrapper({ children }: { children: React.ReactNode }) {
   const sizes = useSizes();
   const isSmall = sizes.width < 640;
-  const { isInView, setIsInView } = React.useContext(ProjectVideoContext);
+  const { setIsInView } = React.useContext(ProjectVideoContext);
 
   return (
     <MotionConfig transition={{ duration: 0.8, delay: 0.1 }}>

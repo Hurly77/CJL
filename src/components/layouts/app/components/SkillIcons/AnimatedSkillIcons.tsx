@@ -50,21 +50,30 @@ export default function IconAnimateList({ skills }: { skills: string[] }) {
     return { Icon, z: skills.length - idx };
   });
 
-  return Icons.map(({ Icon, z }, i) => {
-    const delay = duration * i + 0.5;
-    const initial = { x: i === 0 ? 0 : -56, opacity: 0 };
-    const animate = { x: 0, opacity: 1 };
+  return (
+    <>
+      {Icons.map(({ Icon, z }, i) => {
+        const delay = duration * i + 0.5;
+        const initial = { x: i === 0 ? 0 : -56, opacity: 0 };
+        const animate = { x: 0, opacity: 1 };
 
-    if (delay !== 0 && !delay) throw new Error(`Delay is not defined ${delay}`);
+        if (delay !== 0 && !delay) throw new Error(`Delay is not defined ${delay}`);
 
-    return (
-      <motion.div key={i} initial={initial} whileInView={animate} transition={{ delay, duration }}>
-        <Icon
-          key={i}
-          style={{ zIndex: z }}
-          className="h-10 w-10 fill-primary-50 p-1 hover:scale-125 transition-transform"
-        />
-      </motion.div>
-    );
-  });
+        return (
+          <motion.div
+            key={i}
+            initial={initial}
+            whileInView={animate}
+            transition={{ delay, duration }}
+          >
+            <Icon
+              key={i}
+              style={{ zIndex: z }}
+              className="h-10 w-10 fill-primary-50 p-1 hover:scale-125 transition-transform"
+            />
+          </motion.div>
+        );
+      })}
+    </>
+  );
 }

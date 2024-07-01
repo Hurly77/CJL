@@ -31,6 +31,8 @@ export function AppContextProvider({ children }: { children: React.ReactNode }) 
           if (overflowElm) overflowElm.scrollTop = 0;
         }}
       >
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment*/}
+        {/* @ts-ignore */}
         <ThemeProvider attribute="class" defaultTheme="dark">
           <div id="APP" className={cls("app", font.font?.className)}>
             <ThemeWrapper>

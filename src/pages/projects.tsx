@@ -1,6 +1,6 @@
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { Button } from "@nextui-org/react";
-import { motion } from "framer-motion";
+// import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+// import { Button } from "@nextui-org/react";
+// import { motion } from "framer-motion";
 import React from "react";
 
 import ProjectCard from "@/app/components/Project/ProjectCard";
@@ -9,22 +9,22 @@ import { projects } from "@/lib/static/projects";
 import { NextPageWithLayout } from "./_app";
 
 // TODO: Add a bounce arrow to move between projects
-function BounceArrow({ direction }: { direction: number }) {
-  const Icon = direction === 1 ? ChevronDownIcon : ChevronUpIcon;
-  const bounceDown = { y: [0, -6, 6, 1, 0] };
-  const bounceUp = { y: [0, 6, -6, -1, 0] };
-  const transition = { duration: 2, repeat: Infinity, ease: "easeInOut" };
+// function BounceArrow({ direction }: { direction: number }) {
+//   const Icon = direction === 1 ? ChevronDownIcon : ChevronUpIcon;
+//   const bounceDown = { y: [0, -6, 6, 1, 0] };
+//   const bounceUp = { y: [0, 6, -6, -1, 0] };
+//   const transition = { duration: 2, repeat: Infinity, ease: "easeInOut" };
 
-  return (
-    <motion.span
-      transition={{ y: transition }}
-      animate={{ y: direction === 1 ? bounceDown.y : bounceUp.y }}
-      className="group-hover:rotate-180"
-    >
-      <Icon className="h-10 w-10 stroke-foreground" />
-    </motion.span>
-  );
-}
+//   return (
+//     <motion.span
+//       transition={{ y: transition }}
+//       animate={{ y: direction === 1 ? bounceDown.y : bounceUp.y }}
+//       className="group-hover:rotate-180"
+//     >
+//       <Icon className="h-10 w-10 stroke-foreground" />
+//     </motion.span>
+//   );
+// }
 
 export const Projects: NextPageWithLayout = () => {
   // const [projectItem, setProjectItem] = React.useState(0);
