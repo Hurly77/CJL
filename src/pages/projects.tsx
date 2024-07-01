@@ -3,11 +3,12 @@ import { Button } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import React from "react";
 
-import ProjectCard, { ProjectCardProps } from "@/app/components/Project/ProjectCard";
+import ProjectCard from "@/app/components/Project/ProjectCard";
 import { projects } from "@/lib/static/projects";
 
 import { NextPageWithLayout } from "./_app";
 
+// TODO: Add a bounce arrow to move between projects
 function BounceArrow({ direction }: { direction: number }) {
   const Icon = direction === 1 ? ChevronDownIcon : ChevronUpIcon;
   const bounceDown = { y: [0, -6, 6, 1, 0] };
@@ -26,36 +27,29 @@ function BounceArrow({ direction }: { direction: number }) {
 }
 
 export const Projects: NextPageWithLayout = () => {
-  const [projectItem, setProjectItem] = React.useState(0);
-  const [scrollHeight, setScrollHeight] = React.useState(0);
+  // const [projectItem, setProjectItem] = React.useState(0);
+  // const [scrollHeight, setScrollHeight] = React.useState(0);
 
-  React.useEffect(() => {
-    const element = document.getElementById("APP_OVERFLOW");
-    if (element) {
-      setScrollHeight(element.scrollHeight);
-    }
-  }, []);
+  // function onClickMoveDown(direction: number) {
+  //   const isUp = direction === 1;
 
-  function onClickMoveDown(direction: number) {
-    const isUp = direction === 1;
+  //   const element = document.getElementById("APP_OVERFLOW");
+  //   if (element) {
+  //     element.scrollBy({
+  //       top: isUp ? 100 : -100,
+  //       behavior: "smooth",
+  //     });
 
-    const element = document.getElementById("APP_OVERFLOW");
-    if (element) {
-      element.scrollBy({
-        top: isUp ? 100 : -100,
-        behavior: "smooth",
-      });
-
-      setProjectItem((prev) => prev + (isUp ? 1 : -1));
-    }
-  }
+  //     setProjectItem((prev) => prev + (isUp ? 1 : -1));
+  //   }
+  // }
 
   return (
     <div>
       {projects.map((project, i) => (
         <ProjectCard {...project} key={i} index={i} />
       ))}
-      <div className="absolute bottom-4 right-4 sm:right-1/4 flex flex-col gap-2">
+      {/* <div className="absolute bottom-4 right-4 sm:right-1/4 flex flex-col gap-2">
         {projectItem !== 0 && (
           <Button
             aria-label="Move up"
@@ -68,7 +62,7 @@ export const Projects: NextPageWithLayout = () => {
             <BounceArrow direction={0} />
           </Button>
         )}
-        {projectItem !== 8 && (
+        {projectItem !== 4 && (
           <Button
             aria-label="Move down"
             onClick={() => onClickMoveDown(1)}
@@ -80,7 +74,7 @@ export const Projects: NextPageWithLayout = () => {
             <BounceArrow direction={1} />
           </Button>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

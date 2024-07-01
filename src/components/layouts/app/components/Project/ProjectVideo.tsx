@@ -1,11 +1,18 @@
 import { PlayIcon } from "@heroicons/react/24/solid";
 import { Card, Image } from "@nextui-org/react";
 import { motion, MotionConfig } from "framer-motion";
+import React from "react";
 import ReactPlayer from "react-player";
 
 import { cls } from "../../helpers/twind-helpers";
 import useSizes from "../../hooks/useSizes";
 
+interface ProjectVideoCtx {
+  isInView: boolean;
+  setIsInView: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const ProjectVideoContext = React.createContext({} as ProjectVideoCtx);
 const DotsSvg = ({ isSmall }: { isSmall: boolean }) => (
   <motion.svg
     initial={{ y: 400, x: -400, opacity: 0 }}
@@ -25,6 +32,8 @@ const DotsSvg = ({ isSmall }: { isSmall: boolean }) => (
 function ProjectVideoWrapper({ children }: { children: React.ReactNode }) {
   const sizes = useSizes();
   const isSmall = sizes.width < 640;
+  const { isInView, setIsInView } = React.useContext(ProjectVideoContext);
+
   return (
     <MotionConfig transition={{ duration: 0.8, delay: 0.1 }}>
       <motion.div
@@ -48,6 +57,8 @@ function ProjectVideoWrapper({ children }: { children: React.ReactNode }) {
             translateX: !isSmall ? [0, 0, 20] : [0, 0, 0],
             translateY: !isSmall ? [0, 0, 20] : [0, 0, 0],
           }}
+          onViewportLeave={() => setIsInView(false)}
+          onViewportEnter={() => setIsInView(true)}
           transition={{
             duration: 0.8,
             translateX: { delay: 0.3, duration: 1 },
@@ -64,26 +75,31 @@ function ProjectVideoWrapper({ children }: { children: React.ReactNode }) {
 
 export default function ProjectVideo(props: { url: string; thumbnail: string }) {
   const { url, thumbnail } = props;
+  const [isInView, setIsInView] = React.useState(false);
 
   return (
-    <ReactPlayer
-      url={url}
-      playing={true}
-      light={
-        <Image
-          classNames={{
-            img: "rounded object-contain h-full w-full sm:aspect-video aspect-square",
-            wrapper: " w-full",
-          }}
-          src={thumbnail}
-          alt={"project image"}
-          className="object-contain rounded"
-        />
-      }
-      wrapper={ProjectVideoWrapper}
-      playIcon={
-        <PlayIcon className="absolute z-10 w-12 h-12 bg-black rounded-full fill-primary bg-opacity-20" />
-      }
-    />
+    <ProjectVideoContext.Provider value={{ isInView, setIsInView }}>
+      <ReactPlayer
+        url={url}
+        playing={isInView}
+        controls={true}
+        stopOnUnmount={true}
+        light={
+          <Image
+            classNames={{
+              img: "rounded object-contain h-full w-full sm:aspect-video aspect-square",
+              wrapper: " w-full",
+            }}
+            src={thumbnail}
+            alt={"project image"}
+            className="object-contain rounded"
+          />
+        }
+        wrapper={ProjectVideoWrapper}
+        playIcon={
+          <PlayIcon className="absolute z-10 w-12 h-12 bg-black rounded-full fill-primary bg-opacity-20" />
+        }
+      />
+    </ProjectVideoContext.Provider>
   );
 }

@@ -22,7 +22,7 @@ export const projects: ProjectCardProps[] = [
     ],
     demo: "https://eshop.cjleverett.me/",
     github: "https://github.com/Hurly77/e-comm",
-    video: "https://youtu.be/i6NXZF1CE5Y?si=ok1EugSL9gEmBVZu",
+    video: "https://youtu.be/KD7TLb1rVRE?si=dnK4YybjOZtsXWl_",
     thumbnail: "/images/projects/E-shop-thumbnail.jpg",
   },
   {
@@ -35,7 +35,7 @@ export const projects: ProjectCardProps[] = [
     skills: ["React", "NextJS", "PostgreSQL", "TypeScript", "Tailwindcss", "supabase"],
     demo: "https://todos.cjleverett.me/",
     github: "https://github.com/Hurly77/e-comm",
-    video: "https://youtu.be/i6NXZF1CE5Y?si=ok1EugSL9gEmBVZu",
+    video: "https://youtu.be/7NRquv2la-Q",
     thumbnail: "/images/projects/toduit-thumbnail.jpg",
   },
   {
@@ -47,7 +47,7 @@ export const projects: ProjectCardProps[] = [
     `,
     demo: "https://blog-it-hurly77.vercel.app/",
     github: "https://github.com/Hurly77/BlogIt",
-    video: "https://youtu.be/i6NXZF1CE5Y?si=ok1EugSL9gEmBVZu",
+    video: "https://youtu.be/rdG8EBFAMQM",
     thumbnail: "/images/projects/blog-it-thumbnail.jpg",
     skills: ["React", "NextJS", "JavaScript", "CSS"],
   },
@@ -59,7 +59,7 @@ export const projects: ProjectCardProps[] = [
     demo: "https://cjleverett.me/",
     github: "https://github.com/Hurly77/CJL",
     skills: ["React", "NextJS", "TypeScript", "Tailwindcss"],
-    video: "https://youtu.be/i6NXZF1CE5Y?si=ok1EugSL9gEmBVZu",
+    video: "https://youtu.be/CDN5Oo73jYA",
     thumbnail: "/images/projects/portfolio-thumbnail.png",
   },
 ];

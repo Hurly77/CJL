@@ -8,23 +8,14 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-  Switch,
 } from "@nextui-org/react";
-import { useTheme } from "next-themes";
 import React from "react";
 
-import { FontDropDown } from "@/components/Dropdowns/FontDropDown";
-
 import { navLinks } from "../../constants/navigation";
-import { useApp } from "../../context/AppContext";
 import { cls } from "../../helpers/twind-helpers";
 
 export function AppNavbar() {
-  const appCtx = useApp();
-  const { font, setFont } = appCtx.fontStates;
-  const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isDark, setIsDark] = React.useState(theme !== "dark");
 
   return (
     <Navbar
@@ -43,9 +34,6 @@ export function AppNavbar() {
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex" justify="end">
-        <Link color="foreground" href="/">
-          Home
-        </Link>
         {navLinks.map((link) => (
           <NavbarItem key={link.path}>
             <Link color="foreground" href={link.path}>
@@ -53,19 +41,6 @@ export function AppNavbar() {
             </Link>
           </NavbarItem>
         ))}
-        <NavbarItem>
-          <FontDropDown font={font} setFont={setFont} />
-        </NavbarItem>
-        <NavbarItem>
-          <Switch
-            aria-label="Toggle theme"
-            defaultSelected={isDark}
-            onValueChange={(value) => {
-              setTheme(value ? "dark" : "light");
-              setIsDark(value);
-            }}
-          />
-        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>

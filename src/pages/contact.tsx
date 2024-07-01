@@ -4,7 +4,9 @@ import React from "react";
 import ContactForm from "@/app/components/Contact/ContactForm";
 import SocialsAnimatedList from "@/app/components/Socials/SocialsAnimateList";
 
-export default function Contact() {
+import { NextPageWithLayout } from "./_app";
+
+export const Contact: NextPageWithLayout = () => {
   return (
     <div className="flex-col items-center justify-center pb-24 app-page">
       <div className="flex flex-col items-center justify-center w-full h-full max-w-screen-lg px-2 py-4">
@@ -31,4 +33,7 @@ export default function Contact() {
       </div>
     </div>
   );
-}
+};
+
+Contact.title = "Cameron L. - Contact";
+export default Contact;
