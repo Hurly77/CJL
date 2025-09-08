@@ -39,7 +39,7 @@ function ExpCard({ exp }: { exp: (typeof Experience)[0] }) {
 // Just my resume, name is because of the page resume.tsx
 export default function ResumeWebCV() {
   return (
-    <div className="max-w-screen-lg py-12 sm:px-0 px-1">
+    <div className="max-w-(--breakpoint-lg) py-12 sm:px-0 px-1">
       <ResumeSection title="Experience">
         {Experience.map((exp, i) => (
           <motion.div

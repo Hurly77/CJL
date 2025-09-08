@@ -10,7 +10,7 @@ export default function AboutProfessionalSummary() {
   };
 
   return (
-    <div className="flex-col justify-center max-w-screen-lg px-5 my-6 app-page">
+    <div className="flex-col justify-center max-w-(--breakpoint-lg) px-5 my-6 app-page">
       <motion.h1
         variants={variants}
         initial={"hidden"}

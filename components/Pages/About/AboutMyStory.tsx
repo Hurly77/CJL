@@ -75,7 +75,7 @@ export default function AboutMyStory() {
   return (
     <div className="items-center justify-center app-page ">
       <div>
-        <div className="grid w-full max-w-screen-xl gap-10 sm:grid-flow-col">
+        <div className="grid w-full max-w-(--breakpoint-xl) gap-10 sm:grid-flow-col">
           <AboutStory {...myFirstProject} placement="top" />
           <AboutStory {...myStart} placement="bottom" />
         </div>

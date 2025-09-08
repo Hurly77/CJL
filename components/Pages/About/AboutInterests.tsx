@@ -94,7 +94,7 @@ export default function AboutInterests() {
   ];
 
   return (
-    <div className="flex-col justify-center max-w-screen-lg px-5 space-y-16 app-page">
+    <div className="flex-col justify-center max-w-(--breakpoint-lg) px-5 space-y-16 app-page">
       <div>
         <motion.h1
           initial={{ opacity: 0, y: 250 }}

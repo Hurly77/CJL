@@ -13,7 +13,7 @@ export default function ResumeButtons() {
         stiffness: 200,
         rotate: { delay: 1, duration: 1 },
       }}
-      className="gap-4 flex w-full px-2 sm:px-0 justify-between sm:justify-end max-w-screen-lg py-2 sticky top-16 z-10"
+      className="gap-4 flex w-full px-2 sm:px-0 justify-between sm:justify-end max-w-(--breakpoint-lg) py-2 sticky top-16 z-10"
     >
       <Button
         as="a"

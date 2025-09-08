@@ -8,7 +8,7 @@ import ContactForm from "./ContactForm";
 export default function ContactContainer() {
   return (
     <div className="flex-col items-center justify-center pb-24 app-page">
-      <div className="flex flex-col items-center justify-center w-full h-full max-w-screen-lg px-2 py-4">
+      <div className="flex flex-col items-center justify-center w-full h-full max-w-(--breakpoint-lg) px-2 py-4">
         <motion.h1
           className="w-full py-4 text-3xl font-bold sm:text-6xl"
           initial={{ opacity: 0, y: 20 }}
