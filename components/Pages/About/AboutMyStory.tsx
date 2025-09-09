@@ -1,9 +1,9 @@
-import { motion, MotionConfig } from "framer-motion";
-import Image from "next/image";
-
-import { AboutMyStorySection } from "lib/static/about";
+"use client";
 
 import clsx from "clsx";
+import { motion, MotionConfig } from "framer-motion";
+import { AboutMyStorySection } from "lib/static/about";
+import Image from "next/image";
 
 function AboutStory(props: {
   title: string;

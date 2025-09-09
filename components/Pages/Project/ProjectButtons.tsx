@@ -1,8 +1,10 @@
+"use client";
+
 import { ComputerDesktopIcon } from "@heroicons/react/24/outline";
 import { Button } from "@heroui/react";
 import { motion } from "framer-motion";
 
-import { GithubIcon } from "../Socials";
+import { GithubIcon } from "@/components/Socials";
 
 export default function ProjectButtons({ demo, github }: { demo: string; github: string }) {
   return (

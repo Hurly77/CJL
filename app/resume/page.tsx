@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Resume() {
   return (
-    <div className="app-page items-center flex-col space-y-2 pb-32">
+    <div className="flex items-center flex-col space-y-2 pb-32">
       <ResumeButtons />
       <ResumeWebCV />
     </div>

@@ -1,18 +1,20 @@
+"use client";
+
 import { Link } from "@heroui/react";
 import React from "react";
 
-import { navLinks } from "../../constants/navigation";
-import SocialsList from "./../Socials/SocialsList";
+import SocialsList from "@/components/Socials/SocialsList";
+import { navLinks } from "@/constants/navigation";
 
 export function AppFooter() {
   return (
-    <footer className="w-full bg-content4 dark:bg-content2 p-6 gap-4 flex items-center flex-col snap-end">
+    <footer className="w-full bg-content2 p-6 gap-4 flex items-center flex-col snap-end">
       <div className="flex gap-4">
-        {navLinks.map((link) => (
+        {navLinks.map((link, idx) => (
           <Link
             className="text-sm"
             underline="hover"
-            key={link.path}
+            key={link.path + idx}
             href={link.path}
             color="foreground"
           >

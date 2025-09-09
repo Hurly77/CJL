@@ -1,7 +1,10 @@
+"use client";
+
 import { motion, MotionConfig } from "framer-motion";
 import React from "react";
 
-import AnimatedSkillIcons from "../SkillIcons/AnimatedSkillIcons";
+import AnimatedSkillIcons from "@/components/SkillIcons/AnimatedSkillIcons";
+
 import ProjectButtons from "./ProjectButtons";
 import ProjectDescription from "./ProjectDescription";
 import ProjectVideo from "./ProjectVideo";

@@ -25,6 +25,6 @@
       }
     ]
   },
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts", "_tailwind.config.js", "tailwind.config.js"],
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts", "tailwind.config.js", "tailwind.config.js"],
   "exclude": ["node_modules", "_src/**/*.test.ts", "_src/**/*.test.tsx"]
 }

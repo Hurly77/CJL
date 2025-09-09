@@ -1,12 +1,11 @@
-import { ProjectCardProps } from "_src/components/layouts/app/components/Project/ProjectCard";
+import { ProjectCardProps } from "@/components/Pages/Project/ProjectCard";
 
 export const projects: ProjectCardProps[] = [
   {
     title: "E-Shop",
     description: `
    This minimalist e-commerce site, inspired by Target, uses React, NextJS,
-   and TailwindCSS for the frontend, and NestJS and PostgreSQL for the backend.
-   It features authentication, product browsing, Stripe checkout, and order management, deployed on AWS with Docker and Vercel.`,
+   and TailwindCSS for the frontend, and NestJS and PostgreSQL for the backend.`,
 
     skills: [
       "React",

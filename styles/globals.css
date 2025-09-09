@@ -1,19 +1,87 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+/* @plugin "./hero.ts"; */
+@config "../tailwind.config.js";
+
+/* @source '../../node_modules/@heroui/theme/dist*.{js,ts,jsx,tsx}'; */
+
+/* @custom-variant dark (&:is(.dark *)); */
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: hsl(var(--heroui-default));
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--heroui-primary));
+    border-radius: 8px;
+    border: 3px solid hsl(var(--heroui-default));
+    height: 5px;
+  }
+}
 
 @layer base {
   @font-face {
     font-family: "Teko";
     font-weight: 400;
-    src: url("../../public/fonts/Teko-Regular.ttf");
+    font-display: swap;
+    src: url("/fonts/Teko-Regular.ttf") format("truetype");
   }
   @font-face {
     font-family: "Teko";
     font-weight: 500;
-    src: url("../../public/fonts/Teko-Regular.ttf");
+    font-display: swap;
+    src: url("/fonts/Teko-Regular.ttf") format("truetype");
   }
 }
 
 @layer utilities {
+}
+
+@layer components {
+  .app {
+    @apply flex flex-col h-screen bg-gradient-to-br from-content2/85 via-content2 via-25% to-50% to-background;
+  }
+  .app-overflow {
+    @apply flex flex-col w-full max-h-full overflow-x-hidden overflow-y-auto grow custom-scrollbar;
+  }
+  .app-content {
+    @apply flex flex-col items-center justify-center w-full;
+  }
+  .app-page {
+    @apply min-h-[calc(100vh-4rem)] flex w-full;
+  }
+  .app-page2xl {
+    @apply min-h-[calc(100vh-4rem)] max-w-screen-2xl flex w-full p-4;
+  }
+
+  .project-section {
+    @apply w-full max-w-screen-md p-4 sm:px-4 px-0 relative my-4 min-h-[calc(100vh-65px)] snap-end flex flex-col justify-center;
+  }
+
+  .tools-skills-wrapper {
+    @apply sm:gap-4 gap-2 py-4 grid grid-cols-3 sm:grid-cols-5 sm:justify-items-center sm:justify-evenly sm:h-auto sm:overflow-visible snap-x snap-mandatory;
+  }
+
+  .tool-skill-card {
+    @apply w-full border border-divider grow hover:z-10 sm:hover:scale-125 snap-center hover:transition-transform;
+  }
+
+  .tb1 {
+    @apply border-4 border-primary;
+  }
+  .tb2 {
+    @apply border-4 border-secondary;
+  }
+  .tb3 {
+    @apply border-4 border-success;
+  }
+  .tb4 {
+    @apply border-4 border-danger;
+  }
+
+  .all-border * {
+    @apply border border-divider;
+  }
 }

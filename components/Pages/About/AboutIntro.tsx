@@ -1,3 +1,5 @@
+"use client";
+
 import AboutHeroDescription from "./AboutHeroDescription";
 import AboutHeroImage from "./AboutHeroImage";
 

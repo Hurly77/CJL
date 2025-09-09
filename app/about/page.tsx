@@ -1,11 +1,11 @@
-import AboutInterests from "_src/components/layouts/app/components/About/AboutInterests";
-import AboutIntro from "_src/components/layouts/app/components/About/AboutIntro";
-import AboutMyStory from "_src/components/layouts/app/components/About/AboutMyStory";
-import AboutProfessionalSummary from "_src/components/layouts/app/components/About/AboutProfessionalSummary";
+import AboutInterests from "@/components/Pages/About/AboutInterests";
+import AboutIntro from "@/components/Pages/About/AboutIntro";
+import AboutMyStory from "@/components/Pages/About/AboutMyStory";
+import AboutProfessionalSummary from "@/components/Pages/About/AboutProfessionalSummary";
 
 export default function About() {
   return (
-    <div className="flex-col items-center justify-center pb-32 app-page">
+    <div className="flex-col items-center justify-center pb-32 flex">
       <div className="px-5">
         <AboutIntro />
         <AboutMyStory />

@@ -1,5 +1,8 @@
+"use client";
+
 import emailjs from "@emailjs/browser";
 import { Button, Card, CardBody, CardFooter, CardHeader, Input, Textarea } from "@heroui/react";
+import { addToast } from "@heroui/react";
 import { motion } from "framer-motion";
 import Joi from "joi";
 import React from "react";
@@ -27,7 +30,7 @@ export default function ContactForm() {
   const formRef = React.useRef<HTMLFormElement>(null);
 
   const [messageSending, setMessageSending] = React.useState(false);
-  const [successMessage, setSuccessMessage] = React.useState("");
+  const [successMessage] = React.useState("");
   const [errorMessage, setErrorMessage] = React.useState("");
 
   const [formData, setFormData] = React.useState({
@@ -64,17 +67,31 @@ export default function ContactForm() {
       });
 
       if (status === 200) {
-        setSuccessMessage("Message sent successfully!");
+        addToast({
+          color: "success",
+          title: "Success",
+          description: "Message sent successfully!",
+        });
         setFormData({
           name: "",
           reply_to: "",
           subject: "",
           message: "",
         });
-      } else setErrorMessage("Failed to send message. Please try again later.");
+      } else
+        addToast({
+          color: "danger",
+          title: "Error",
+          description: "Failed to send message. Please try again later.",
+        });
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
+      addToast({
+        color: "danger",
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+      });
     } finally {
       setMessageSending(false);
     }
@@ -91,7 +108,7 @@ export default function ContactForm() {
           translateY: isSmall ? 0 : [0, 0, 20],
         }}
         transition={{ duration: 1 }}
-        className="border-2 rounded sm:aspect-square border-secondary bg-secondary bg-opacity-5 shadow-small grow"
+        className="border-2 rounded sm:aspect-square border-secondary bg-secondary/5 shadow-small grow"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
@@ -122,6 +139,9 @@ export default function ContactForm() {
                   placeholder="Johnny Doe"
                   value={formData.name}
                   onChange={onChangeHandler}
+                  classNames={{
+                    inputWrapper: "border-b-1 border-divider",
+                  }}
                 />
                 <Input
                   variant="underlined"
@@ -132,6 +152,9 @@ export default function ContactForm() {
                   placeholder="your.email@example.com"
                   value={formData.reply_to}
                   onChange={onChangeHandler}
+                  classNames={{
+                    inputWrapper: "border-b-1 border-divider",
+                  }}
                 />
                 <Input
                   variant="underlined"
@@ -142,6 +165,10 @@ export default function ContactForm() {
                   placeholder="What is the Topic?"
                   value={formData.subject}
                   onChange={onChangeHandler}
+                  classNames={{
+                    inputWrapper: "border-b-1 border-divider",
+                    input: "placeholder:text-white",
+                  }}
                 />
                 <Textarea
                   size="lg"
@@ -149,12 +176,13 @@ export default function ContactForm() {
                   variant="underlined"
                   name="message"
                   label="Message"
-                  classNames={{
-                    input: "custom-scrollbar",
-                  }}
-                  placeholder="what would you like to discuss?"
                   value={formData.message}
                   onChange={onChangeHandler}
+                  classNames={{
+                    input: "custom-scrollbar",
+                    inputWrapper: "border-b-1 border-divider",
+                  }}
+                  placeholder="what would you like to discuss?"
                 />
               </div>
             </CardBody>
@@ -162,10 +190,11 @@ export default function ContactForm() {
               <div className="w-full px-4">
                 <Button
                   size="lg"
-                  color="primary"
                   className="w-full"
                   type="submit"
+                  color="primary"
                   isLoading={messageSending}
+                  isDisabled={!formData?.reply_to}
                 >
                   Send
                 </Button>

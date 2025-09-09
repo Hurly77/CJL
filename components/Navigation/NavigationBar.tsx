@@ -1,3 +1,5 @@
+"use client";
+
 import { CodeBracketIcon } from "@heroicons/react/24/outline";
 import {
   Link,
@@ -9,10 +11,10 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@heroui/react";
+import clsx from "clsx";
 import React from "react";
 
-import { navLinks } from "../../constants/navigation";
-import clsx from "clsx";
+import { navLinks } from "@/constants/navigation";
 
 export function AppNavbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -34,8 +36,8 @@ export function AppNavbar() {
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex" justify="end">
-        {navLinks.map((link) => (
-          <NavbarItem key={link.path}>
+        {navLinks.map((link, idx) => (
+          <NavbarItem key={link.path + idx}>
             <Link color="foreground" href={link.path}>
               {link.name}
             </Link>
@@ -44,8 +46,8 @@ export function AppNavbar() {
       </NavbarContent>
 
       <NavbarMenu>
-        {navLinks.map((link) => (
-          <NavbarMenuItem key={link.path}>
+        {navLinks.map((link, idx) => (
+          <NavbarMenuItem key={idx}>
             <Link color="foreground" onTouchStart={() => setIsMenuOpen(false)} href={link.path}>
               {link.name}
             </Link>

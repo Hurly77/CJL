@@ -1,7 +1,9 @@
+"use client";
+
 import { Card, CardBody, CardHeader } from "@heroui/react";
 import { motion } from "framer-motion";
 
-import * as Skills from "../../SkillIcons/index";
+import * as Skills from "@/components/SkillIcons";
 
 export default function AboutProfessionalSummary() {
   const variants = {
@@ -27,7 +29,7 @@ export default function AboutProfessionalSummary() {
         whileInView={"show"}
         transition={{ delay: 0.2, duration: 0.8 }}
         viewport={{ once: true }}
-        className="tools-skills-wrapper"
+        className="tools-skills-wrapper "
       >
         {Object.keys(Skills).map((skill: string) => {
           const Skill = Skills[skill as keyof typeof Skills];
@@ -35,12 +37,14 @@ export default function AboutProfessionalSummary() {
             <div key={skill} className="h-full sm:w-full ">
               <Card className="h-full tool-skill-card">
                 <CardHeader>
-                  <div className="p-4 rounded-full bg-primary">
-                    <Skill key={skill} className="w-16 h-16 fill-foreground" />
+                  <div className="p-2 sm:p-4 rounded-full bg-primary">
+                    <Skill key={skill} className="sm:w-16 sm:h-16 h-8 w-8 fill-foreground" />
                   </div>
                 </CardHeader>
                 <CardBody>
-                  <h3 className="text-2xl font-semibold">{skill?.replace("Icon", "")}</h3>
+                  <h3 className="sm:text-2xl text-xs font-semibold">
+                    {skill?.replace("Icon", "")}
+                  </h3>
                 </CardBody>
               </Card>
             </div>

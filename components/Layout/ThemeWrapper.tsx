@@ -1,8 +1,10 @@
+"use client";
+
+import clsx from "clsx";
 import { useTheme } from "next-themes";
 import React from "react";
 
 import { useApp } from "@/app/providers";
-import clsx from "clsx";
 
 export function ThemeWrapper({ children }: { children: React.ReactNode }) {
   const app = useApp();

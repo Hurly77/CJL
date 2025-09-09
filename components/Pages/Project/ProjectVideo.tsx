@@ -1,11 +1,13 @@
+"use client";
+
 import { PlayIcon } from "@heroicons/react/24/solid";
 import { Card, Image } from "@heroui/react";
+import clsx from "clsx";
 import { motion, MotionConfig } from "framer-motion";
 import React from "react";
 import ReactPlayer from "react-player";
 
-import clsx from "clsx";
-import useSizes from "../../hooks/useSizes";
+import useSizes from "@/hooks/useSizes";
 
 interface ProjectVideoCtx {
   isInView: boolean;
@@ -29,7 +31,7 @@ const DotsSvg = ({ isSmall }: { isSmall: boolean }) => (
   </motion.svg>
 );
 
-function ProjectVideoWrapper({ children }: { children: React.ReactNode }) {
+function ProjectVideoWrapper({ children }: { children?: React.ReactNode }) {
   const sizes = useSizes();
   const isSmall = sizes.width < 640;
   const { setIsInView } = React.useContext(ProjectVideoContext);
@@ -42,7 +44,7 @@ function ProjectVideoWrapper({ children }: { children: React.ReactNode }) {
           scale: [0, 1.1, isSmall ? 0.95 : 1],
           opacity: 1,
         }}
-        className="relative z-10 w-full h-full border-2 rounded bg-opacity-5 shadow-small aspect-video bg-secondary border-secondary"
+        className="relative z-10 w-full h-full border-2 rounded shadow-small aspect-video bg-secondary/5 border-secondary"
       >
         <DotsSvg isSmall={isSmall} />
         <motion.div
@@ -80,10 +82,9 @@ export default function ProjectVideo(props: { url: string; thumbnail: string }) 
   return (
     <ProjectVideoContext.Provider value={{ isInView, setIsInView }}>
       <ReactPlayer
-        url={url}
+        src={url}
         playing={isInView}
         controls={true}
-        stopOnUnmount={true}
         light={
           <Image
             classNames={{
@@ -97,7 +98,7 @@ export default function ProjectVideo(props: { url: string; thumbnail: string }) 
         }
         wrapper={ProjectVideoWrapper}
         playIcon={
-          <PlayIcon className="absolute z-10 w-12 h-12 bg-black rounded-full fill-primary bg-opacity-20" />
+          <PlayIcon className="absolute z-10 w-12 h-12 bg-black/20 rounded-full fill-primary" />
         }
       />
     </ProjectVideoContext.Provider>

@@ -1,6 +1,6 @@
 import { projects } from "lib/static/projects";
-
 import React from "react";
+
 import ProjectCard from "@/components/Pages/Project/ProjectCard";
 
 export const metadata = {
@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Projects() {
   return (
-    <div>
+    <div className="flex items-center flex-col">
       {projects.map((project, idx) => (
         <ProjectCard {...project} key={idx} index={idx} />
       ))}

@@ -1,6 +1,8 @@
-import { motion } from "framer-motion";
+"use client";
 
 import clsx from "clsx";
+import { motion } from "framer-motion";
+
 import { SocialIcons } from "./index";
 
 export default function SocialsAnimatedList(props: { size?: "sm" | "md" | "lg" }): JSX.Element {

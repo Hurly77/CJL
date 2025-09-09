@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+
 import SocialsAnimatedList from "@/components/Socials/SocialsAnimateList";
+
 import ContactForm from "./ContactForm";
 
 export default function ContactContainer() {

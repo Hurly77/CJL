@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowDownTrayIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { Button } from "@heroui/react";
 import { motion } from "framer-motion";
@@ -30,7 +32,7 @@ export default function ResumeButtons() {
         download
         variant="bordered"
         color="secondary"
-        className="text-foreground bg-background bg-opacity-60"
+        className="text-foreground bg-background/60"
         href="/images/cameron_leverett_resume.pdf"
         endContent={<ArrowDownTrayIcon className="w-5 h-5" />}
       >

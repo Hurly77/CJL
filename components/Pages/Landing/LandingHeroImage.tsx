@@ -4,8 +4,8 @@ import { Card } from "@heroui/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import useSizes from "@/hooks/useSizes";
 import SocialsAnimatedList from "@/components/Socials/SocialsAnimateList";
+import useSizes from "@/hooks/useSizes";
 
 export default function LandingHeroImage() {
   const { isSmall, width } = useSizes();
@@ -34,7 +34,7 @@ export default function LandingHeroImage() {
         initial={isSmall ? "initialSmall" : "initial"}
         animate={isSmall ? "animateSmall" : "animate"}
         transition={{ duration: 1 }}
-        className="border-2 rounded w-fit h-fit border-primary bg-opacity-10 bg-primary shadow-small"
+        className="border-2 rounded w-fit h-fit border-primary bg-primary/10 shadow-small"
       >
         <motion.div
           key={`image-isSmall=${isSmall?.toString()}`}
