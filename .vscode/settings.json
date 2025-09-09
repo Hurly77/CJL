@@ -1,16 +1,4 @@
 {
-  "sqltools.connections": [
-    {
-      "previewLimit": 50,
-      "server": "db.sjunkxgtgamzbddtbcmq.supabase.co",
-      "port": 5432,
-      "askForPassword": true,
-      "driver": "PostgreSQL",
-      "name": "Supabase",
-      "username": "postgres",
-      "database": "postgres"
-    }
-  ],
   "cSpell.words": ["Cetagory", "multiselect", "nextui", "Pressable"],
   "svg.preview.background": "dark-transparent"
 }
