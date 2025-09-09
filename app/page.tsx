@@ -1,9 +1,15 @@
+import { Metadata } from "next";
+
 import LandingHeroImage from "@/components/Pages/Landing/LandingHeroImage";
 import LandingHeroTitle from "@/components/Pages/Landing/LandingHeroTitle";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Cameron Leverett",
-  description: "Cameron John Leverett, Software engineer, web Developer full-stack",
+  authors: [{ name: "Cameron Leverett", url: "https://cjleverett.me" }],
+  applicationName: "CJ Leverett Portfolio",
+  colorScheme: "dark",
+  description:
+    "Cameron John Leverett, Software engineer, Web Developer full-stack, front-end, back-end.",
 };
 
 export default function Page() {
